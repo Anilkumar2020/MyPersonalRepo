@@ -1,2 +1,1 @@
-# Intellipaat
-Training and learning 
+
