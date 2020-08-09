@@ -1,0 +1,55 @@
+Docker installation in Ubuntu 18.04LTS steps : 
+    
+      apt-get update 
+      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
+      sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) \
+      stable"
+      apt-get update
+      apt-get install docker-ce docker-ce-cli containerd.io
+      
+To check Docker service status : systemctl status docker
+To pull images from docker hub : docker image pull httpd:latest   ( httpd is hub image name : latest is just tag )
+To check docker image active list : docker image ls 
+To check docker active and inactive list : docker image ls -a 
+To run docker container with image : docker container run -d -p 10001:80 --name apache:latest ( -d is backgroud run and -p is port )
+Port number : if expose 80 ( we can create multiple container in single machine with 80port using diff local port ( 10000+ )
+To list docker container : docker container ls & docker container ls -a ( for all container )
+Create container with apache image : docker container run -d -p 10001:80 --name apache-1  httpd:latest
+Stop container : dcoker container stop apache-1
+Pause container : dcoker container stop apache-1 ( during maintanence , when HA configured its helps )
+Unpause container : docker containe unpause 
+Continer kill : docker container kill apache-1
+Container restart : docker container restart apache-1
+To start multiple conatiner :   docker container start CONTAINER_ID CONTAINER_ID 
+To login to container to check data : docker container exec -it aaedeced981f /bin/bash  ( aaedeced981f | Container id )
+To run container with customer hardware size : docker container run -d -p 20000:80 --cpus=0.1 --memory=100m --name apahe-1 httpd:latest
+To check container stats : docker container stats apache-1
+To stop container : docker container stop apache-1
+To Remome container : docker container rm apache-1
+
+
+##########################################
+Docker file creation :
+##########################################
+
+FROM
+ADD
+RUN
+CMD
+ENV
+EXPOSE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
