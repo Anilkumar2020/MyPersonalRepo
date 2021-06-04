@@ -1,0 +1,7 @@
+
+ docker build -t blog-cve17198 .
+ docker image list
+ gcloud auth login
+ docker tag blog-cve17198 gcr.io/ecosystem-core/unilog/application/blog-cve17198
+ gcloud auth configure-docker
+ docker push gcr.io/ecosystem-core/unilog/application/blog-cve17198
